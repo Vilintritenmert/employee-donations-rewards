@@ -1,0 +1,30 @@
+version: "3.4"
+services:
+  data_aggregator_web:
+    image: "node:18.20"
+    user: "node"
+    working_dir: /home/node/app
+    env_file:
+      - .env
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - ${APP_PORT}:3000
+    links:
+      - data_aggregator_db
+    command: npm run start:dev
+  data_aggregator_db:
+    image: "postgres"
+    restart: always
+    shm_size: 128mb
+    expose:
+      - 5432
+    env_file:
+      - .env
+    volumes:
+      - ./docker/create-db.sql:/docker-entrypoint-initdb.d/create_database.sql
+  data_aggregator_adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8082:8080
