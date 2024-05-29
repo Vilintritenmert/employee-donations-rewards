@@ -18,7 +18,7 @@ This repository contains a application that imports employee data from a dump fi
 
 ### Feature: Import Data through CLI 
 ```bash
-1) docker-compose run -rm data_aggregator_web /bin/bash  
+1) docker-compose run --rm data_aggregator_web /bin/bash  
 2) node ./dist/command import /home/node/app/data/dump.txt
 3) Enjoy :)
 ```
