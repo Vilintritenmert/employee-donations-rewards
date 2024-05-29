@@ -12,8 +12,9 @@ This repository contains a application that imports employee data from a dump fi
  ```bash
  1. git clone https://github.com/vilintritenmert/employee-donations-rewards.git
  2. cd employee-donations-rewards
- 3. cp .env.example .env
- 4. docker-compose up 
+ 3. npm i
+ 4. cp .env.example .env
+ 5. docker-compose up 
   ```
 
 ### Feature: Import Data through CLI 
